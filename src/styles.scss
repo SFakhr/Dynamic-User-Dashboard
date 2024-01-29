@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #5ca0f2;
+  --white: #ffffff;
+  --light-transparent-blue: #5ca0f21c;
+  --bg-overlay: #80808069;
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-container {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+
+  .page-view {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width: 80%;
+
+    .content-header {
+      width: 100%;
+    }
+  }
+}
+
+.overlay-section {
+  background-color: var(--bg-overlay);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  z-index: 101;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+  .mat-mdc-progress-spinner
+    .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: var(--primary-color) !important;
+  }
+}

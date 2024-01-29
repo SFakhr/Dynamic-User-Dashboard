@@ -1,0 +1,25 @@
+.table-container {
+  height: 100%;
+  width: 100%;
+
+  .table-section {
+    position: relative;
+    min-height: 200px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+
+      .table-row {
+        cursor: pointer;
+      }
+
+      img {
+        border-radius: 50%;
+        padding: 5px;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}

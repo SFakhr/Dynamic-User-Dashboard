@@ -1,0 +1,58 @@
+<div class="page-container">
+  <div class="page-view">
+    <app-content-header
+      class="content-header"
+      [props]="{
+        title: 'Users List',
+        isDetailView: false,
+        node: 'users'
+      }"
+      (onModeClick)="onModeClick($event)"
+      (onValueChanged)="onSearchChange($event)"
+    ></app-content-header>
+
+    <app-table
+      class="users-table-view"
+      *ngIf="mode === 'listView'"
+      [data]="data"
+      [node]="'users'"
+      [total]="total"
+      [totalPerPage]="totalPerPage"
+      [totalPages]="totalPages"
+      (onRowClick)="onRecordClick($event)"
+      (onPaginationClick)="onChangePage($event)"
+    >
+    </app-table>
+
+    <div *ngIf="mode === 'gridView'" class="users-grid-view">
+      <app-user-card
+        class="table"
+        *ngFor="let user of data"
+        [data]="user"
+        class="card"
+        (click)="onRecordClick(user)"
+      >
+      </app-user-card>
+
+      <div class="load-more-container">
+        <button
+          mat-raised-button
+          [disabled]="data.length === totalPages"
+          (click)="onLoadMore()"
+        >
+          Load More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Overlay section-->
+<div *ngIf="isLoading" class="overlay-section">
+  <mat-progress-spinner
+    class="example-margin"
+    [value]="50"
+    [mode]="'indeterminate'"
+  >
+  </mat-progress-spinner>
+</div>

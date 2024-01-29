@@ -1,0 +1,12 @@
+<div class="user-card">
+  <div class="avatar-section">
+    <div
+      class="user-avatar"
+      [ngStyle]="{
+        'background-image': 'url(' + data.avatar + ')'
+      }"
+    ></div>
+  </div>
+  <span class="user-name">{{ data.first_name }} {{ data.last_name }}</span>
+  <span class="user-id">User ID: {{ data.id }}</span>
+</div>

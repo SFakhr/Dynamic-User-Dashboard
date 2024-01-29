@@ -1,0 +1,75 @@
+<div class="page-container">
+  <div class="page-view">
+    <app-content-header
+      class="content-header"
+      [props]="{
+        title: 'User Details',
+        isDetailView: true,
+        node: 'users'
+      }"
+    ></app-content-header>
+    <mat-card class="form-view full-width">
+      <mat-card-content>
+        <form
+          class="form-content-container"
+          novalidate
+          [formGroup]="validationForm"
+        >
+          <div class="avatar-section">
+            <img
+              class="user-avatar"
+              [src]="
+                validationForm.value?.avatar
+                  ? validationForm.value.avatar
+                  : 'assets/material-icons/broken-image.svg'
+              "
+              alt="Avatar Image"
+            />
+          </div>
+          <div class="user-info">
+            <!--Email-->
+            <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input
+                id="emailInput"
+                matInput
+                class="form-input input-style"
+                placeholder="Email"
+                value="{{ validationForm.value.email }}"
+                autocomplete="off"
+                disabled
+              />
+            </mat-form-field>
+
+            <!--First Name-->
+            <mat-form-field class="full-width">
+              <mat-label>First Name</mat-label>
+              <input
+                id="firstNameInput"
+                matInput
+                class="form-input input-style"
+                placeholder="First Name"
+                value="{{ validationForm.value.first_name }}"
+                autocomplete="off"
+                disabled
+              />
+            </mat-form-field>
+
+            <!--Last Name-->
+            <mat-form-field class="full-width">
+              <mat-label>Last Name</mat-label>
+              <input
+                id="lastNameInput"
+                matInput
+                placeholder="Last Name"
+                value="{{ validationForm.value.last_name }}"
+                autocomplete="off"
+                disabled
+              />
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

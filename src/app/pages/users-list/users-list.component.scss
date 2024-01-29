@@ -1,0 +1,82 @@
+.page-container {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+
+  .page-view {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width: 80%;
+
+    .content-header {
+      width: 100%;
+    }
+
+    .users-table-view {
+      padding-top: 22px;
+      width: 100%;
+    }
+
+    .users-grid-view {
+      padding-bottom: 80px;
+      flex-wrap: wrap;
+      display: flex;
+      width: 100%;
+      gap: 1.5rem;
+
+      .card {
+        width: calc((100% - 4rem - 4px) / 3);
+        min-width: 200px;
+        height: 300px;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        opacity: 0.5;
+      }
+
+      .load-more-container {
+        background-color: var(--light-transparent-blue);
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        display: flex;
+        width: 80%;
+        bottom: 0;
+
+        button {
+          background-color: var(--primary-color);
+          color: var(--white);
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .page-container {
+    .page-view {
+      .users-grid-view {
+        .card {
+          width: calc((100% - 2rem - 4px) / 2);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .page-container {
+    .page-view {
+      .users-grid-view {
+        .card {
+          width: calc((100% - 4px));
+        }
+      }
+    }
+  }
+}

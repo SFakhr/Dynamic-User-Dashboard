@@ -1,0 +1,38 @@
+.user-card {
+  background-color: var(--light-transparent-blue);
+  border: 2px solid var(--primary-color);
+  flex-direction: column;
+  border-radius: 12px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 0.5rem;
+
+  .avatar-section {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 230px;
+    width: 100%;
+
+    .user-avatar {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      height: 175px;
+      width: 175px;
+    }
+  }
+
+  .user-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .user-id {
+    font-size: 1rem;
+  }
+}

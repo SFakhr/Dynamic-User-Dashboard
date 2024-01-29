@@ -1,0 +1,33 @@
+.form-view {
+  margin-top: 1rem;
+
+  mat-card-content {
+    padding: 0;
+    width: 100%;
+
+    .avatar-section {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 360px;
+      width: 100%;
+
+      .user-avatar {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+      }
+    }
+
+    .user-info {
+      padding: 0 22px;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}

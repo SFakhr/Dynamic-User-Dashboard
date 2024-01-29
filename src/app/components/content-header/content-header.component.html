@@ -1,0 +1,47 @@
+<div class="content">
+  <div style="display: flex; flex-direction: column">
+    <div class="page-header">
+      <div class="title">
+        {{ props.title }}
+      </div>
+      <div class="mode" *ngIf="!props.isDetailView">
+        <img
+          [ngStyle]="{ opacity: config.viewType === mode ? '0.5' : '1' }"
+          [src]="config.iconName"
+          alt=""
+          *ngFor="let config of headerConfig"
+          (click)="onToggleViewClick(config.viewType)"
+        />
+      </div>
+
+      <button
+        mat-button
+        *ngIf="props.isDetailView"
+        class="back-btn"
+        (click)="onClickBAckBtn()"
+      >
+        Back
+      </button>
+    </div>
+
+    <mat-form-field class="search-section" *ngIf="!props.isDetailView">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="onSearchValueChange($event)"
+      />
+      @if (searchValue) {
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchValue = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      }
+    </mat-form-field>
+  </div>
+</div>
